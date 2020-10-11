@@ -5,10 +5,12 @@ import logo from './zenva-academy.png';
 class ApexForm extends Component {
   state = {
     username: '',
+    orientation: '',
+    race: '',
   };
 
   render() {
-    const { username } = this.state;
+    const { username, orientation, race } = this.state;
 
     return (
       <Container>
@@ -35,7 +37,37 @@ class ApexForm extends Component {
                   <Form.Control type="date" />
                 </Form.Group>
 
-
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formOrientation">
+                    <Form.Label>Orientation</Form.Label>
+                    <Form.Control
+                      as="select"
+                      value={orientation}
+                      onChange={this.setOrientation}
+                    >
+                      <option>-Orientation-</option>
+                      <option>Female</option>
+                      <option>Male</option>
+                      <option>Other</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formEthnicity">
+                    <Form.Label>Ethnicity</Form.Label>
+                    <Form.Control
+                      as="select"
+                      value={race}
+                      onChange={this.setRace}
+                    >
+                      <option>-Race-</option>
+                      <option>White</option>
+                      <option>Hispanic</option>
+                      <option>Black or African American</option>
+                      <option>American Indian or Alaska Native</option>
+                      <option>Asian</option>
+                      <option>Native Hawaiian or Other Pacific Islander</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Form.Row>
               </Form>
             </Jumbotron>
           </Col>
