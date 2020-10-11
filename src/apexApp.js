@@ -5,19 +5,51 @@ import logo from './zenva-academy.png';
 class ApexForm extends Component {
   state = {
     username: '',
-    birthday: '',
+    date: '',
     sex: '',
     race: '',
   };
 
+  setUsername = (ev) => {
+    this.setState({
+      username: ev.target.value,
+    });
+  }
+
+  setDate = (ev) => {
+    this.setState({
+      date: ev.target.value,
+    });
+  }
+
+  setSex = (ev) => {
+    this.setState({
+      sex: ev.target.value,
+    });
+  }
+
+  setRace = (ev) => {
+    this.setState({
+      race: ev.target.value,
+    });
+  }
+
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    const { username, date } = this.state;
+
+    alert(`Response Submitted for ${username} on ${date}`);
+  }
+
   render() {
-    const { username, birthday, sex, race } = this.state;
+    const { username, date, sex, race } = this.state;
 
     return (
       <Container>
         <Row>
           <Col med={{ span: 7, offset: 3 }}>
             <Jumbotron>
+              <img width={100} src={logo} alt="logo" />
               <p>
                 Welcome to Apex Legends. Fill out some information about the battle royale mode and third person mode so that we can improve the game over time!
               </p>
@@ -34,8 +66,8 @@ class ApexForm extends Component {
                 </Form.Group>
 
                 <Form.Group controlId="formBirth">
-                  <Form.Label>Birthday</Form.Label>
-                  <Form.Control type="date" value={birthday} onChange={this.setBirthday} />
+                  <Form.Label>Date</Form.Label>
+                  <Form.Control type="date" value={date} onChange={this.setDate} />
                 </Form.Group>
 
                 <Form.Row>
