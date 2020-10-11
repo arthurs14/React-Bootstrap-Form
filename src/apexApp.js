@@ -5,12 +5,12 @@ import logo from './zenva-academy.png';
 class ApexForm extends Component {
   state = {
     username: '',
-    orientation: '',
+    sex: '',
     race: '',
   };
 
   render() {
-    const { username, orientation, race } = this.state;
+    const { username, sex, race } = this.state;
 
     return (
       <Container>
@@ -18,7 +18,7 @@ class ApexForm extends Component {
           <Col med={{ span: 7, offset: 3 }}>
             <Jumbotron>
               <p>
-                Welcome to Apex Legends. Fill out some information about the normal mode and third person mode so that we can improve the game over time!
+                Welcome to Apex Legends. Fill out some information about the battle royale mode and third person mode so that we can improve the game over time!
               </p>
 
               <Form onSubmit={this.handleSubmit}>
@@ -38,19 +38,20 @@ class ApexForm extends Component {
                 </Form.Group>
 
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formOrientation">
-                    <Form.Label>Orientation</Form.Label>
+                  <Form.Group as={Col} controlId="formSex">
+                    <Form.Label>Sex</Form.Label>
                     <Form.Control
                       as="select"
-                      value={orientation}
-                      onChange={this.setOrientation}
+                      value={sex}
+                      onChange={this.setSex}
                     >
-                      <option>-Orientation-</option>
+                      <option>-Sex-</option>
                       <option>Female</option>
                       <option>Male</option>
                       <option>Other</option>
                     </Form.Control>
                   </Form.Group>
+
                   <Form.Group as={Col} controlId="formEthnicity">
                     <Form.Label>Ethnicity</Form.Label>
                     <Form.Control
@@ -68,6 +69,40 @@ class ApexForm extends Component {
                     </Form.Control>
                   </Form.Group>
                 </Form.Row>
+
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formPlaytime">
+                    <Form.Label>Playtime</Form.Label>
+                    <Form.Check
+                      type="radio"
+                      label="Daily"
+                      name="formRadio1"
+                      ids="formRadio1"
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="Frequently"
+                      name="formRadio1"
+                      ids="formRadio1"
+                    />
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formOutcome">
+                    <Form.Label>Tired of Only Battle Royale Mode?</Form.Label>
+                    <Form.Check
+                      type="radio"
+                      label="Yes"
+                      name="formRadio2"
+                      ids="formRadio2"
+                    />
+                    <Form.Check
+                      type="radio"
+                      label="No"
+                      name="formRadio2"
+                      ids="formRadio2"
+                    />
+                  </Form.Group>
+                </Form.Row>
+
               </Form>
             </Jumbotron>
           </Col>
