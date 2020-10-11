@@ -5,12 +5,13 @@ import logo from './zenva-academy.png';
 class ApexForm extends Component {
   state = {
     username: '',
+    birthday: '',
     sex: '',
     race: '',
   };
 
   render() {
-    const { username, sex, race } = this.state;
+    const { username, birthday, sex, race } = this.state;
 
     return (
       <Container>
@@ -34,7 +35,7 @@ class ApexForm extends Component {
 
                 <Form.Group controlId="formBirth">
                   <Form.Label>Birthday</Form.Label>
-                  <Form.Control type="date" />
+                  <Form.Control type="date" value={birthday} onChange={this.setBirthday} />
                 </Form.Group>
 
                 <Form.Row>
@@ -86,6 +87,7 @@ class ApexForm extends Component {
                       ids="formRadio1"
                     />
                   </Form.Group>
+
                   <Form.Group as={Col} controlId="formOutcome">
                     <Form.Label>Tired of Only Battle Royale Mode?</Form.Label>
                     <Form.Check
@@ -102,6 +104,13 @@ class ApexForm extends Component {
                     />
                   </Form.Group>
                 </Form.Row>
+
+                <Form.Group>
+                  <Form.Label>Comment and Concerns About Battle Royale Mode</Form.Label>
+                  <Form.Control as="textarea" rows="3" />
+                </Form.Group>
+
+                <Button variant="primary" type="submit">Submit</Button>
 
               </Form>
             </Jumbotron>
