@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Row, Jumbotron, Form, Button } from 'react-bootstrap';
+import { Container, Col, Row, Jumbotron } from 'react-bootstrap';
 import BattleRoyaleForm from './BattleRoyaleForm';
 import logo from './zenva-academy.png';
 
