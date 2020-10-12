@@ -5,22 +5,50 @@ import ThirdPersonForm from './ThirdPersonForm';
 import logo from './zenva-academy.png';
 
 class ApexForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isBattleRoyalePage: false,
+      isThirdPersonPage: false,
+      isMainPage: true,
+    };
+
+    this.enableBRPage = this.enableBRPage.bind(this);
+    this.enableTPPage = this.enableTPPage.bind(this);
+  }
+
+  enableBRPage = () => {
+    this.setState({
+      isBattleRoyalePage: true,
+      isMainPage: false,
+    });
+  }
+
+  enableTPPage = () => {
+    this.setState({
+      isThidPersonPage: true,
+      isMainPage: false,
+    });
+  }
+
   render() {
-    return (
+    let mainComponent = (
       <Container>
         <Row>
-          <Col med={{ span: 7, offset: 3 }}>
-            <Jumbotron>
-              <img width={100} src={logo} alt="logo" />
+          <Col md={{ span: 7, offset: 3 }}>
+            <Jumotron>
+              <img width={100} src={logo} alt="zenva" />
+              <h1>New Apex Legend Review Form</h1>
               <p>
-                Welcome to Apex Legends. Fill out some information about the battle royale mode and third person mode so that we can improve the game over time!
+                How has Apex Legends main Battle Royale Mode been? Do you like it? Should it be changed? Should we include different modes other than First Person?
               </p>
-
-              <BattleRoyaleForm />
-            </Jumbotron>
+            </Jumotron>
           </Col>
         </Row>
       </Container>
+    );
+
+    return (
     );
   }
 }
