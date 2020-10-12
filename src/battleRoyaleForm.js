@@ -6,7 +6,7 @@ const BattleRoyaleForm = ({ formData, setUsername, setDate, setSex, setRace, han
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group>
-        <h2>User Information</h2>
+        <h2>Battle Royal Submission</h2>
         <Form.Label>Username</Form.Label>
         <Form.Control
           type="input"
