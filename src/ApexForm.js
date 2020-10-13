@@ -74,7 +74,7 @@ class ApexForm extends Component {
                     <Form.Control type="email" placeholder="Enter Email" />
                   </Form.Group>
                   <Form.Group as={Col} controlId="formPhone">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Phone</Form.Label>
                     <Form.Control type="telephone" placeholder="Enter Phone" />
                   </Form.Group>
                 </Form.Row>
@@ -125,7 +125,7 @@ class ApexForm extends Component {
 
     return (
       <div>
-        { this.state.isMainePage ? mainComponent : null}
+        { this.state.isMainPage ? mainComponent : null}
         { this.state.isBattleRoyalePage ? this.BRPage() : null}
         { this.state.isThirdPersonPage ? this.TPPage() : null}
       </div>
